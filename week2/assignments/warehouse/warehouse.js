@@ -30,7 +30,6 @@ const parts = [
 // if hazardous parts exist (in aisle J4), let employee know in the "hazardousMaterials"
 // element and remind them to get gloves, else remove element
 
-
 // if all items in the order are small parts (aisle H1), then let employee know that they should take 
 // a basket and go dirctly to aisle H1
 
