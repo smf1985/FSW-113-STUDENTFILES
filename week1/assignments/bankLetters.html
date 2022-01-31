@@ -30,6 +30,10 @@
             { fname: 'Petra', balance: 500.35, rate: 4.9 },
             { fname: 'Reggie', balance: 0, rate: 7.2 }
         ]
+
+        // Display all these letters in the letterDiv element.
+        const customerDiv = document.querySelector("#letterDiv");
+
         // Create a loop that iterates through the customers array. Based on the customer's balance, create a personalized copy of the appropriate letter text from below. 
 
         for (i = 0; i < customers.length; i++) {
@@ -58,9 +62,6 @@
         textContent.textContent = letterText;
         customerDiv.appendChild(textContent);
     }
-
-        // Display all these letters in the letterDiv element.
-        const customerDiv = document.querySelector("#letterDiv");
 
     </script>
 </html>
