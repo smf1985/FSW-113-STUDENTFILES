@@ -23,12 +23,12 @@ const parts = [
 
 // list of each part number and qty for check-off in the "detailsList" element
 let partList = document.querySelector("#detailsList");
-parts.forEach(function(_element, index) {
+parts.forEach(function(part) {
     let needPart = document.createElement("div");
     let newPart = document.createElement("input");
     newPart.setAttribute("type", "checkbox");
     let partLabel = document.createElement("label");
-    partLabel.textContent = `${parts[index].qty} (${parts[index].partNbr}) - ${parts[index].partDescr}`;
+    partLabel.textContent = `${part.qty} (${part.partNbr}) - ${part.partDescr}`;
     partList.appendChild(needPart);
     needPart.appendChild(newPart);
     needPart.appendChild(partLabel);
@@ -37,14 +37,14 @@ parts.forEach(function(_element, index) {
 // if parts requiring special handling exist (in aisle B3), list of items needing 
 // special packaging in the "specialPackaging" element, else remove element
 let specialPackaging = document.querySelector("#specialPackaging");
-let specialHandling = parts.filter(function(_element, index) {
-    return parts[index].aisle === "B3";
+let specialHandling = parts.filter(function(parts) {
+    return parts.aisle === "B3";
 });
 
 if (specialHandling.length !== 0) {
-    specialHandling.forEach(function(_element, index) {
+    specialHandling.forEach((part) => {
         let revisedHandling = document.createElement("p");
-        revisedHandling.textContent = `Item: ${specialHandling[index].partNbr}`;
+        revisedHandling.textContent = `Item: ${part.partNbr} / Qty: ${part.qty}`;
         specialPackaging.appendChild(revisedHandling);
         specialPackaging.style.height = "max-content";
     })

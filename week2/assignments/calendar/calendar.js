@@ -20,10 +20,11 @@ let months = [
 ];
 
 let select = document.querySelector("#months");
-months.map(function(month) {
-    let counter = 0;
-    select.innerHTML += `<option value="${counter}">${month}</option`;
-    counter++;
+months.map(function(month, index) {
+    return `<option value= "${index}" > ${month} </option`;
+}) 
+    .forEach(function(option) {
+    select.innerHTML += option
 });
 
 document.querySelector("#inputYear").value = new Date().getFullYear();
